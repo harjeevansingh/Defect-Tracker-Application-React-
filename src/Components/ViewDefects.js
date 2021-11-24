@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/style.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class ViewDefects extends React.Component{
     render(){
@@ -32,6 +33,25 @@ class ViewDefects extends React.Component{
         var counter = 1;
         return(
             <div style={{'textAlign':'center'}}>
+                <section>
+                    <h2>Filter Details </h2>
+                    <table className='table'>
+                        <tr>
+                            <td style={{'backgroundColor':'white'}}> <label for='priority'>Priotity </label></td>
+                            <td style={{'backgroundColor':'white'}}><select id='priority' name='priority'> 
+                                <option selected value='all'>All</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{'backgroundColor':'white'}}><label for='category'>Category </label></td>
+                            <td style={{'backgroundColor':'white'}}><select id='category' name='category' > 
+                                <option selected value='all'>All</option>
+                            </select>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
                 <h2>Defect Details</h2>
                 <table className='table' >
                     <caption>Search Results: {defectDetails.length}</caption>
@@ -52,7 +72,7 @@ class ViewDefects extends React.Component{
                                     <td colSpan='5'>{defect.description}</td>
                                     <td>{defect.priority}</td>
                                     <td>{defect.status}</td>
-                                    <td>{defect.status=="open"? <a href='#'>"Close Defect"</a>:"No action pending"}</td>
+                                    <td>{defect.status==="open"? <a href='#'>"Close Defect"</a>:"No action pending"}</td>
                                 </tr>
                             )
                             })}

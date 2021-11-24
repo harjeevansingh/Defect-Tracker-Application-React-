@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import ViewDefects from './Components/ViewDefects'
+import Header from './Components/Header'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header/>
     <ViewDefects />
   </React.StrictMode>,
   document.getElementById('root')
